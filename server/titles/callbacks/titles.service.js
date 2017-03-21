@@ -14,7 +14,7 @@ function retrieve(addresses, callback) {
     // patternRegex = /^((http|https):\/\/)/;
     patternRegex = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
     if (!patternRegex.test(url))
-      url = "http://" + url;
+      callback('ERROR');
 
     request(url, function (err, responsem, html) {
       if (err)
